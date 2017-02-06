@@ -1,31 +1,33 @@
 <%= form_for @user do |f| %> 
  
-  <p>
+  <div>
     <%= f.label :name %><br>
     <%= f.text_field :name %> 
     <p style="color:red;font-size: 15px"><%= @user.errors.full_messages_for(:name).first %></p> 
-  </p>
+  </div>
  
-  <p>
+  <div>
     <%= f.label :password %><br>
     <%= f.password_field :password %>
     <p style="color:red;font-size: 15px"><%= @user.errors.full_messages_for(:password).first %></p>
-  </p>
+  </div>
 
-  <p>
+  <div>
     <%= f.label :email %><br>
     <%= f.text_field :email %>
     <p style="color:red;font-size: 15px"><%= @user.errors.full_messages_for(:email).first %></p>
-  </p>
+  </div>
 
-  <p>    
-    <%= f.check_box :terms_of_services %>
-    <%= f.label :terms_of_services %>
-    <%= @user.errors.full_messages_for(:terms_of_services).first %> 
-  </p>
+  <div>    
+    <span><%= f.check_box :terms_of_services %></span>
+    <span><%= f.label :terms_of_services %></span>
+  </div>
+  <div>
+    <p style="color:red;font-size: 15px"><%= @user.errors.full_messages_for(:terms_of_services).first %> </p>
+  </div>
  
-  <p>
+  <div>
     <%= f.submit %>
-  </p>
+  </div>
  
 <% end %>
