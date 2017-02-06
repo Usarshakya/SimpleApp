@@ -13,6 +13,12 @@
   </div>
 
   <div>
+    <%= f.label :"Confirmation Password" %><br>
+    <%= f.password_field :password_confirmation %>
+    <p style="color:red;font-size: 15px"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
+  </div>
+
+  <div>
     <%= f.label :email %><br>
     <%= f.text_field :email %>
     <p style="color:red;font-size: 15px"><%= @user.errors.full_messages_for(:email).first %></p>
@@ -27,7 +33,7 @@
   </div>
  
   <div>
-    <%= f.submit %>
+    <%= f.submit "Register" %>
   </div>
  
 <% end %>
